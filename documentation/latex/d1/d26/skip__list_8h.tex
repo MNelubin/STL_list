@@ -1,0 +1,110 @@
+\doxysection{D\+:/education/\+C++/second semestr/\+STL\+\_\+list/include/skip\+\_\+list.h File Reference}
+\hypertarget{skip__list_8h}{}\label{skip__list_8h}\index{D:/education/C++/second semestr/STL\_list/include/skip\_list.h@{D:/education/C++/second semestr/STL\_list/include/skip\_list.h}}
+{\ttfamily \#include "{}skip\+\_\+list\+\_\+node.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_skip_list_iterator_impl}{Skip\+List\+Iterator\+Impl$<$ Node\+Ptr, Value\+Type, Difference\+Type, Pointer, Reference $>$}}
+\begin{DoxyCompactList}\small\item\em Implementation of the \doxylink{class_skip_list}{Skip\+List} iterator. Supports bidirectional iteration. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_skip_list}{Skip\+List$<$ T, Allocator $>$}}
+\begin{DoxyCompactList}\small\item\em A Skip List data structure with an interface similar to std\+::list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacestd}{std}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T, typename Allocator$>$ }\\bool \mbox{\hyperlink{skip__list_8h_afe5da6652b044c755af164d2f09c7945}{operator==}} (const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&lhs, const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T, typename Allocator$>$ }\\bool \mbox{\hyperlink{skip__list_8h_a06a1855b56b2eeb3df5ba4a1a02a11b6}{operator!=}} (const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&lhs, const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T, typename Allocator$>$ }\\bool \mbox{\hyperlink{skip__list_8h_a07e7087f66a793a3dd82414b2ec7e3c1}{operator$<$}} (const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&lhs, const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T, typename Allocator$>$ }\\bool \mbox{\hyperlink{skip__list_8h_a208dc9c54d2b6511ac4610ec18dd3c50}{operator$<$=}} (const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&lhs, const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T, typename Allocator$>$ }\\bool \mbox{\hyperlink{skip__list_8h_a548ae05b8a6af00fcf04434c79a41f70}{operator$>$}} (const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&lhs, const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T, typename Allocator$>$ }\\bool \mbox{\hyperlink{skip__list_8h_a1c84e7d7fbf48e4248de19376d5fb690}{operator$>$=}} (const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&lhs, const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&rhs)
+\item 
+{\footnotesize template$<$typename T, typename Allocator$>$ }\\void \mbox{\hyperlink{namespacestd_aa054cc1e0fc39fd8736e02f4341b8c0e}{std\+::swap}} (\mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&lhs, \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&rhs) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{skip__list_8h_a06a1855b56b2eeb3df5ba4a1a02a11b6}\index{skip\_list.h@{skip\_list.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!skip\_list.h@{skip\_list.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{skip__list_8h_a06a1855b56b2eeb3df5ba4a1a02a11b6} 
+template$<$typename T, typename Allocator$>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{skip__list_8h_source_l00565}{565}} of file \mbox{\hyperlink{skip__list_8h_source}{skip\+\_\+list.\+h}}.
+
+\Hypertarget{skip__list_8h_a07e7087f66a793a3dd82414b2ec7e3c1}\index{skip\_list.h@{skip\_list.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!skip\_list.h@{skip\_list.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{skip__list_8h_a07e7087f66a793a3dd82414b2ec7e3c1} 
+template$<$typename T, typename Allocator$>$ \\
+bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{skip__list_8h_source_l00570}{570}} of file \mbox{\hyperlink{skip__list_8h_source}{skip\+\_\+list.\+h}}.
+
+\Hypertarget{skip__list_8h_a208dc9c54d2b6511ac4610ec18dd3c50}\index{skip\_list.h@{skip\_list.h}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!skip\_list.h@{skip\_list.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \label{skip__list_8h_a208dc9c54d2b6511ac4610ec18dd3c50} 
+template$<$typename T, typename Allocator$>$ \\
+bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{skip__list_8h_source_l00575}{575}} of file \mbox{\hyperlink{skip__list_8h_source}{skip\+\_\+list.\+h}}.
+
+\Hypertarget{skip__list_8h_afe5da6652b044c755af164d2f09c7945}\index{skip\_list.h@{skip\_list.h}!operator==@{operator==}}
+\index{operator==@{operator==}!skip\_list.h@{skip\_list.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{skip__list_8h_afe5da6652b044c755af164d2f09c7945} 
+template$<$typename T, typename Allocator$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{skip__list_8h_source_l00559}{559}} of file \mbox{\hyperlink{skip__list_8h_source}{skip\+\_\+list.\+h}}.
+
+\Hypertarget{skip__list_8h_a548ae05b8a6af00fcf04434c79a41f70}\index{skip\_list.h@{skip\_list.h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!skip\_list.h@{skip\_list.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \label{skip__list_8h_a548ae05b8a6af00fcf04434c79a41f70} 
+template$<$typename T, typename Allocator$>$ \\
+bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{skip__list_8h_source_l00580}{580}} of file \mbox{\hyperlink{skip__list_8h_source}{skip\+\_\+list.\+h}}.
+
+\Hypertarget{skip__list_8h_a1c84e7d7fbf48e4248de19376d5fb690}\index{skip\_list.h@{skip\_list.h}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!skip\_list.h@{skip\_list.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \label{skip__list_8h_a1c84e7d7fbf48e4248de19376d5fb690} 
+template$<$typename T, typename Allocator$>$ \\
+bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{class_skip_list}{Skip\+List}}$<$ T, Allocator $>$ \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{skip__list_8h_source_l00585}{585}} of file \mbox{\hyperlink{skip__list_8h_source}{skip\+\_\+list.\+h}}.
+

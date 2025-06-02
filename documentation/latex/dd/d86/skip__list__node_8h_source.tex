@@ -1,0 +1,39 @@
+\doxysection{skip\+\_\+list\+\_\+node.\+h}
+\hypertarget{skip__list__node_8h_source}{}\label{skip__list__node_8h_source}\index{D:/education/C++/second semestr/STL\_list/include/skip\_list\_node.h@{D:/education/C++/second semestr/STL\_list/include/skip\_list\_node.h}}
+\mbox{\hyperlink{skip__list__node_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SKIP\_LIST\_NODE\_H}}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SKIP\_LIST\_NODE\_H}}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cstddef>}\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00007}00007\ \textcolor{comment}{//\ Tag\ for\ sentinel\ node\ constructor\ to\ resolve\ ambiguity}}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00008}\mbox{\hyperlink{struct_sentinel_node_tag}{00008}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_sentinel_node_tag}{SentinelNodeTag}}\ \{\};}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00014}00014\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00015}\mbox{\hyperlink{struct_skip_list_node}{00015}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{SkipListNode}}\ \{}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00016}\mbox{\hyperlink{struct_skip_list_node_afa7584346a53ab92cdcbc91bc5fd2a47}{00016}}\ \ \ \ \ T\ \mbox{\hyperlink{struct_skip_list_node_afa7584346a53ab92cdcbc91bc5fd2a47}{value}};\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00017}\mbox{\hyperlink{struct_skip_list_node_a20847223488392e62cf0e5a7a457a226}{00017}}\ \ \ \ \ std::vector<SkipListNode<T>*>\ \mbox{\hyperlink{struct_skip_list_node_a20847223488392e62cf0e5a7a457a226}{forward\_pointers}};\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00018}\mbox{\hyperlink{struct_skip_list_node_a9589d4a9165cf4e8788ac36ac7152bac}{00018}}\ \ \ \ \ \mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{SkipListNode<T>}}*\ \mbox{\hyperlink{struct_skip_list_node_a9589d4a9165cf4e8788ac36ac7152bac}{prev\_pointer}};\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00026}\mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{00026}}\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{SkipListNode}}(\textcolor{keyword}{const}\ T\&\ val,\ \textcolor{keywordtype}{int}\ level)\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_skip_list_node_afa7584346a53ab92cdcbc91bc5fd2a47}{value}}(val),\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_skip_list_node_a20847223488392e62cf0e5a7a457a226}{forward\_pointers}}(static\_cast<size\_t>(level)\ +\ 1,\ nullptr),\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_skip_list_node_a9589d4a9165cf4e8788ac36ac7152bac}{prev\_pointer}}(nullptr)\ \{\}}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00038}\mbox{\hyperlink{struct_skip_list_node_a0a725a4a5fab7e8ad58161e74eea67c9}{00038}}\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{struct_skip_list_node_a0a725a4a5fab7e8ad58161e74eea67c9}{SkipListNode}}(\textcolor{keywordtype}{int}\ level,\ \mbox{\hyperlink{struct_sentinel_node_tag}{SentinelNodeTag}}\ \textcolor{comment}{/*tag*/},\ \textcolor{keyword}{const}\ T\&\ default\_val\ =\ T\{\})\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_skip_list_node_afa7584346a53ab92cdcbc91bc5fd2a47}{value}}(default\_val),\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_skip_list_node_a20847223488392e62cf0e5a7a457a226}{forward\_pointers}}(static\_cast<size\_t>(level)\ +\ 1,\ nullptr),\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_skip_list_node_a9589d4a9165cf4e8788ac36ac7152bac}{prev\_pointer}}(nullptr)\ \{\}}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ Prevent\ copying\ and\ moving,\ as\ nodes\ are\ managed\ by\ the\ SkipList's\ allocator.}}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00044}\mbox{\hyperlink{struct_skip_list_node_adb705400b346f05ef5b296f7a8438a0e}{00044}}\ \ \ \ \ \mbox{\hyperlink{struct_skip_list_node_adb705400b346f05ef5b296f7a8438a0e}{SkipListNode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{SkipListNode}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00045}\mbox{\hyperlink{struct_skip_list_node_a7d58e17afa5a5206eab4a9ea6fab1b58}{00045}}\ \ \ \ \ \mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{SkipListNode}}\&\ \mbox{\hyperlink{struct_skip_list_node_a7d58e17afa5a5206eab4a9ea6fab1b58}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{SkipListNode}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00046}\mbox{\hyperlink{struct_skip_list_node_a9942c06919e5da5851a09f9c219de2b5}{00046}}\ \ \ \ \ \mbox{\hyperlink{struct_skip_list_node_a9942c06919e5da5851a09f9c219de2b5}{SkipListNode}}(\mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{SkipListNode}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00047}\mbox{\hyperlink{struct_skip_list_node_afbfe19d7883e7217d1444ee63ba65114}{00047}}\ \ \ \ \ \mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{SkipListNode}}\&\ \mbox{\hyperlink{struct_skip_list_node_afbfe19d7883e7217d1444ee63ba65114}{operator=}}(\mbox{\hyperlink{struct_skip_list_node_af9c9c13b829c65725604a8eb9ea907f6}{SkipListNode}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00048}00048\ \};}
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{skip__list__node_8h_source_l00050}00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SKIP\_LIST\_NODE\_H}}
+
+\end{DoxyCode}

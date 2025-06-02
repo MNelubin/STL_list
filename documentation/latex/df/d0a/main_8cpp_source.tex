@@ -1,0 +1,141 @@
+\doxysection{main.\+cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\index{D:/education/C++/second semestr/STL\_list/main.cpp@{D:/education/C++/second semestr/STL\_list/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{skip__list_8h}{include/skip\_list.h}}"{}}\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00010}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{comment}{//\ Original\ SkipList\ example}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_skip_list}{SkipList<int>}}\ mySkipList;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ Insert\ elements\ into\ the\ list}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \ \ \ \ mySkipList.\mbox{\hyperlink{class_skip_list_abe52d7e5f9fa6703f7ed088bcaeefba4}{insert}}(10);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \ \ \ \ mySkipList.\mbox{\hyperlink{class_skip_list_abe52d7e5f9fa6703f7ed088bcaeefba4}{insert}}(30);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \ \ \ \ mySkipList.\mbox{\hyperlink{class_skip_list_abe52d7e5f9fa6703f7ed088bcaeefba4}{insert}}(20);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ \ \ \ \ mySkipList.\mbox{\hyperlink{class_skip_list_abe52d7e5f9fa6703f7ed088bcaeefba4}{insert}}(5);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \ \ \ \ mySkipList.\mbox{\hyperlink{class_skip_list_abe52d7e5f9fa6703f7ed088bcaeefba4}{insert}}(25);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ Print\ the\ elements\ of\ the\ SkipList\ using\ an\ iterator}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Elements\ in\ SkipList:\ "{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ element\ :\ mySkipList)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ std::cout\ <<\ element\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ Example\ of\ erasing\ an\ element}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ mySkipList.\mbox{\hyperlink{class_skip_list_a014ca7b7adb0daa953cb0123e4b53de5}{erase}}(20);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Print\ the\ elements\ again\ after\ erasing}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Elements\ after\ erasing\ 20:\ "{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ element\ :\ mySkipList)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ std::cout\ <<\ element\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Performance\ Test\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ num\_elements\ =\ 10000;\ \textcolor{comment}{//\ Number\ of\ elements\ for\ testing}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ std::vector<int>\ test\_data(num\_elements);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \ \ std::random\_device\ rd;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ \ \ \ \ std::mt19937\ gen(rd());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ std::uniform\_int\_distribution<>\ distrib(1,\ num\_elements\ *\ 10);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Generate\ random\ data}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ num\_elements;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ test\_data[i]\ =\ distrib(gen);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ Test\ SkipList\ insertion}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{class_skip_list}{SkipList<int>}}\ skipListTest;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{auto}\ start\_skip\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ val\ :\ test\_data)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ skipListTest.\mbox{\hyperlink{class_skip_list_abe52d7e5f9fa6703f7ed088bcaeefba4}{insert}}(val);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{auto}\ end\_skip\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ std::chrono::duration<double>\ elapsed\_skip\ =\ end\_skip\ -\/\ start\_skip;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}SkipList\ insertion\ time\ for\ "{}}\ <<\ num\_elements\ <<\ \textcolor{stringliteral}{"{}\ elements:\ "{}}\ <<\ elapsed\_skip.count()\ <<\ \textcolor{stringliteral}{"{}\ seconds\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ Test\ std::list\ insertion\ (sorted\ insertion\ for\ fair\ comparison)}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \ \ \ \ std::list<int>\ stdListTest;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{auto}\ start\_std\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ val\ :\ test\_data)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ correct\ position\ to\ insert\ to\ maintain\ sorted\ order}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ stdListTest.begin();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ stdListTest.end()\ \&\&\ *it\ <\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ stdListTest.insert(it,\ val);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{auto}\ end\_std\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ \ \ \ \ std::chrono::duration<double>\ elapsed\_std\ =\ end\_std\ -\/\ start\_std;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}std::list\ sorted\ insertion\ time\ for\ "{}}\ <<\ num\_elements\ <<\ \textcolor{stringliteral}{"{}\ elements:\ "{}}\ <<\ elapsed\_std.count()\ <<\ \textcolor{stringliteral}{"{}\ seconds\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ Optional:\ Test\ search\ performance}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Search\ Test\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ num\_searches\ =\ 1000;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ \ \ \ \ std::vector<int>\ search\_data(num\_searches);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ num\_searches;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ search\_data[i]\ =\ distrib(gen);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//\ Test\ SkipList\ search}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{int}\ found\_count\_skip\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{auto}\ start\_search\_skip\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ val\ :\ search\_data)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skipListTest.\mbox{\hyperlink{class_skip_list_aaa713eba8e7ec7cd4faa654e354aa361}{find}}(val)\ !=\ skipListTest.\mbox{\hyperlink{class_skip_list_a56d1ca6cf8e07de86e1c197457acfbce}{end}}())\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ found\_count\_skip++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{auto}\ end\_search\_skip\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093\ \ \ \ \ std::chrono::duration<double>\ elapsed\_search\_skip\ =\ end\_search\_skip\ -\/\ start\_search\_skip;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}SkipList\ search\ time\ for\ "{}}\ <<\ num\_searches\ <<\ \textcolor{stringliteral}{"{}\ elements:\ "{}}\ <<\ elapsed\_search\_skip.count()\ <<\ \textcolor{stringliteral}{"{}\ seconds\ (found\ "{}}\ <<\ found\_count\_skip\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//\ Test\ std::list\ search}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{int}\ found\_count\_std\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{auto}\ start\_search\_std\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ val\ :\ search\_data)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ stdListTest.begin();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ stdListTest.end()\ \&\&\ *it\ !=\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ stdListTest.end())\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ found\_count\_std++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keyword}{auto}\ end\_search\_std\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109\ \ \ \ \ std::chrono::duration<double>\ elapsed\_search\_std\ =\ end\_search\_std\ -\/\ start\_search\_std;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}std::list\ search\ time\ for\ "{}}\ <<\ num\_searches\ <<\ \textcolor{stringliteral}{"{}\ elements:\ "{}}\ <<\ elapsed\_search\_std.count()\ <<\ \textcolor{stringliteral}{"{}\ seconds\ (found\ "{}}\ <<\ found\_count\_std\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//\ Test\ SkipList\ deletion\ by\ value}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Deletion\ Test\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{class_skip_list}{SkipList<int>}}\ skipListDeleteTest\ =\ skipListTest;\ \textcolor{comment}{//\ Copy\ the\ list\ after\ insertion}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keyword}{auto}\ start\_delete\_skip\_value\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ val\ :\ search\_data)\ \{\ \textcolor{comment}{//\ Use\ search\_data\ for\ values\ to\ delete}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ skipListDeleteTest.\mbox{\hyperlink{class_skip_list_a014ca7b7adb0daa953cb0123e4b53de5}{erase}}(val);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keyword}{auto}\ end\_delete\_skip\_value\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00120}00120\ \ \ \ \ std::chrono::duration<double>\ elapsed\_delete\_skip\_value\ =\ end\_delete\_skip\_value\ -\/\ start\_delete\_skip\_value;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00121}00121\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}SkipList\ deletion\ by\ value\ time\ for\ "{}}\ <<\ num\_searches\ <<\ \textcolor{stringliteral}{"{}\ elements:\ "{}}\ <<\ elapsed\_delete\_skip\_value.count()\ <<\ \textcolor{stringliteral}{"{}\ seconds\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{comment}{//\ Test\ std::list\ deletion\ by\ value}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00124}00124\ \ \ \ \ std::list<int>\ stdListDeleteTest\ =\ stdListTest;\ \textcolor{comment}{//\ Copy\ the\ list\ after\ insertion}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{auto}\ start\_delete\_std\_value\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ val\ :\ search\_data)\ \{\ \textcolor{comment}{//\ Use\ search\_data\ for\ values\ to\ delete}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ stdListDeleteTest.remove(val);\ \textcolor{comment}{//\ std::list::remove\ removes\ all\ occurrences\ of\ value}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{auto}\ end\_delete\_std\_value\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00130}00130\ \ \ \ \ std::chrono::duration<double>\ elapsed\_delete\_std\_value\ =\ end\_delete\_std\_value\ -\/\ start\_delete\_std\_value;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00131}00131\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}std::list\ deletion\ by\ value\ time\ for\ "{}}\ <<\ num\_searches\ <<\ \textcolor{stringliteral}{"{}\ elements:\ "{}}\ <<\ elapsed\_delete\_std\_value.count()\ <<\ \textcolor{stringliteral}{"{}\ seconds\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00133}00133\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00135}00135\ \}}
+
+\end{DoxyCode}

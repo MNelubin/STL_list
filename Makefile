@@ -6,7 +6,7 @@ TESTPROJECT = test-$(PROJECT)
 # Directories
 SRC_DIR = src
 INC_DIR = include
-TEST_DIR = tests 
+TEST_DIR = tests
 
 # Tools
 CXX = g++
@@ -27,13 +27,13 @@ LDGTESTFLAGS = $(LDLIBS_BASE) -lgtest -lgtest_main
 # Source Files
 APP_SRC = main.cpp # main.cpp is in the root directory
 LIB_SRC = $(wildcard $(SRC_DIR)/*.cpp)
-TEST_SRC_FILES = $(wildcard $(TEST_DIR)/*.cpp)  
+TEST_SRC_FILES = $(TEST_DIR)/$(TESTPROJECT).cpp  
 
 
 # Object Files
 APP_OBJ = $(notdir $(APP_SRC:.cpp=.o))
 LIB_OBJ = $(patsubst $(SRC_DIR)/%.cpp,%.o,$(LIB_SRC))
-TEST_OBJ = $(patsubst $(TEST_DIR)/%.cpp,%.o,$(TEST_SRC_FILES)) 
+TEST_OBJ = $(TEST_DIR)/$(TESTPROJECT).o 
 
 # Dependencies
 DEPS = $(wildcard $(INC_DIR)/*.h)
@@ -58,8 +58,10 @@ $(LIBPROJECT): $(LIB_OBJ)
 	@echo "Creating library $(LIBPROJECT)..."
 	$(AR) $(ARFLAGS) $@ $^
 
-# Build tests
-$(TESTPROJECT): $(TEST_OBJ) $(LIBPROJECT)
+# Build tests executable
+# Depends on the test object file and the library.
+# Also, ensure TEST_DIR exists before linking, though $(TEST_OBJ) should handle it.
+$(TESTPROJECT): $(TEST_OBJ) $(LIBPROJECT) | create_test_dir
 	@echo "Linking test executable $(TESTPROJECT)..."
 	$(CXX) $(CXXFLAGS) -o $@ $(TEST_OBJ) $(LIBPROJECT) $(LDGTESTFLAGS)
 
@@ -77,15 +79,22 @@ $(LIB_OBJ): %.o: $(SRC_DIR)/%.cpp $(DEPS)
 	@echo "Compiling $< -> $@..."
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-# Rule to compile test source file (from TEST_DIR)
-$(TEST_OBJ): %.o: $(TEST_DIR)/%.cpp $(DEPS) 
+# This target represents the test directory itself.
+# It's not .PHONY because it represents a real directory that can exist.
+create_test_dir:
+	@echo "Ensuring directory $(TEST_DIR) exists..."
+	@mkdir -p $(TEST_DIR)
+
+# Rule to compile test source file
+# It depends on the source files, headers, and (order-only) on the test directory's existence.
+$(TEST_OBJ): $(TEST_SRC_FILES) $(DEPS) | create_test_dir
 	@echo "Compiling test source $< -> $@..."
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 # Clean rules
 clean:
 	@echo "Cleaning object files..."
-	rm -f $(APP_OBJ) $(LIB_OBJ) test-$(PROJECT).o
+	rm -f $(APP_OBJ) $(LIB_OBJ) $(TEST_OBJ)
 
 cleanall: clean
 	@echo "Cleaning executables and library..."
