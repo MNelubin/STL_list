@@ -103,6 +103,10 @@ cleanall: clean
 	rm -f massif*
 	rm -f *.gcno *.gcda
 
+lint:
+	@echo "Running Clang-Tidy..."
+	clang-tidy $(APP_SRC) $(LIB_SRC) $(TEST_SRC_FILES) -- -I$(INC_DIR) -std=c++17 -Wall -Werror -Wpedantic
+
 # Coverage rules
 coverage: CXXFLAGS = $(CXXFLAGS_COVERAGE)
 coverage: $(TESTPROJECT)

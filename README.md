@@ -15,6 +15,10 @@ st132907@student.spbu.ru
 
 Implementation of an STL-style Skip List container.
 
+## Documentation
+
+https://mnelubin.github.io/STL_list/
+
 ## Build
 
 `make` - for compiling `main.cpp`

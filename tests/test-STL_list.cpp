@@ -635,6 +635,7 @@ TEST_F(SkipListTest, CopyAssignmentOperator) {
     ASSERT_FALSE(list_assigned.contains(5));
 
     // Self-assignment
+    // NOLINTNEXTLINE(clang-diagnostic-self-assign-overloaded)
     list_assigned = list_assigned;
     ASSERT_EQ(list_assigned.size(), 2); // Still 2 elements
     ASSERT_TRUE(list_assigned.contains(10));

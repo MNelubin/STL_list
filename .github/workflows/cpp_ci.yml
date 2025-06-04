@@ -37,11 +37,28 @@ jobs:
       run: |
         make coverage
 
-
-
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.3.6
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         path-to-lcov: html_coverage/coverage.info
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup environment for lint
+      run: |
+        sudo apt-get update
+
+        sudo apt-get install -y g++-11 make libgtest-dev lcov gcovr clang-tidy
+
+        sudo ln -sf /usr/bin/g++-11 /usr/bin/g++
+
+    - name: Run Clang-Tidy
+      run: |
+        make lint
 
