@@ -97,10 +97,11 @@ clean:
 	@echo "Cleaning object files..."
 	rm -f $(APP_OBJ) $(LIB_OBJ) $(TEST_OBJ)
 
-cleanall: clean clean_coverage
+cleanall: clean
 	@echo "Cleaning executables and library..."
 	rm -f $(PROJECT) $(LIBPROJECT) $(TESTPROJECT)
 	rm -f massif*
+	rm -f *.gcno *.gcda
 
 # Coverage rules
 coverage: CXXFLAGS = $(CXXFLAGS_COVERAGE)
@@ -108,14 +109,5 @@ coverage: $(TESTPROJECT)
 	@echo "Running tests for coverage..."
 	./$(TESTPROJECT)
 	@echo "Generating coverage data..."
-	lcov --ignore-errors version --ignore-errors mismatch --gcov-tool gcov-11 --capture --directory . --output-file coverage.info --rc geninfo_unexecuted_blocks=1 --no-external
-
-lcov_report:
-	@echo "Generating HTML coverage report..."
-	genhtml coverage.info --output-directory html_coverage --rc genhtml_branch_coverage=1
-
-clean_coverage:
-	@echo "Cleaning coverage files..."
-	rm -f *.gcno *.gcda
-	rm -f coverage.info
-	rm -rf html_coverage
+	mkdir -p html_coverage
+	lcov --ignore-errors version --ignore-errors mismatch --gcov-tool gcov-11 --capture --directory . --output-file html_coverage/coverage.info --rc geninfo_unexecuted_blocks=1 --no-external --base-directory .
