@@ -13,7 +13,7 @@ jobs:
     - name: Setup environment
       run: |
         sudo apt-get update
-        sudo apt-get install -y g++-11 make libgtest-dev
+        sudo apt-get install -y g++-11 make libgtest-dev lcov
         sudo ln -sf /usr/bin/g++-11 /usr/bin/g++
 
     - name: Build tests
@@ -23,12 +23,52 @@ jobs:
     - name: Execute tests
       run: |
         ./test-STL_list
-
     - name: Build release
       run: |
         make clean
         make
-
+  
     - name: Cleanup
       run: |
-        make cleanall 
+        make cleanall
+        
+    - name: Generate Coverage Report
+      run: |
+        make coverage
+        make lcov_report
+
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: html_coverage_report
+        path: html_coverage/
+
+  coverage_report:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install lcov
+        run: sudo apt-get update && sudo apt-get install -y lcov
+      - name: Download coverage artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: html_coverage_report
+          path: html_coverage/
+      - name: Generate lcov report
+        run: |
+          cd html_coverage/
+          lcov --ignore-errors version --ignore-errors mismatch --gcov-tool gcov-11 --capture --directory . --output-file coverage.info --rc geninfo_unexecuted_blocks=1 --no-external
+          genhtml coverage.info --output-directory html_coverage --rc genhtml_branch_coverage=1
+      - name: Upload lcov report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lcov_report
+          path: html_coverage/lcov_report/
+
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v2.3.6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: html_coverage/coverage.info
+

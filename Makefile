@@ -18,6 +18,7 @@ ARFLAGS = rcs
 CXXFLAGS_BASE = -I$(INC_DIR) -std=c++17 -Wall -g -fPIC -Werror -Wpedantic -O3
 # Application specific CXXFLAGS
 CXXFLAGS = $(CXXFLAGS_BASE) -DPROJECT_NAME="\"$(PROJECT)\""
+CXXFLAGS_COVERAGE = $(CXXFLAGS_BASE) -fprofile-arcs -ftest-coverage
 # Linker flags
 # Base LDLIBS
 LDLIBS_BASE = -lpthread
@@ -96,7 +97,25 @@ clean:
 	@echo "Cleaning object files..."
 	rm -f $(APP_OBJ) $(LIB_OBJ) $(TEST_OBJ)
 
-cleanall: clean
+cleanall: clean clean_coverage
 	@echo "Cleaning executables and library..."
 	rm -f $(PROJECT) $(LIBPROJECT) $(TESTPROJECT)
 	rm -f massif*
+
+# Coverage rules
+coverage: CXXFLAGS = $(CXXFLAGS_COVERAGE)
+coverage: $(TESTPROJECT)
+	@echo "Running tests for coverage..."
+	./$(TESTPROJECT)
+	@echo "Generating coverage data..."
+	lcov --ignore-errors version --ignore-errors mismatch --gcov-tool gcov-11 --capture --directory . --output-file coverage.info --rc geninfo_unexecuted_blocks=1 --no-external
+
+lcov_report:
+	@echo "Generating HTML coverage report..."
+	genhtml coverage.info --output-directory html_coverage --rc genhtml_branch_coverage=1
+
+clean_coverage:
+	@echo "Cleaning coverage files..."
+	rm -f *.gcno *.gcda
+	rm -f coverage.info
+	rm -rf html_coverage
